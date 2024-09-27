@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://j637ltdtjghn"]
+
+[ext_resource type="PackedScene" uid="uid://dmuctnio6omn1" path="res://godot_console.tscn" id="1_4gfw7"]
+[ext_resource type="Script" path="res://main.gd" id="1_qjrql"]
+
+[node name="root" type="Node2D"]
+
+[node name="GodotConsole1" parent="." instance=ExtResource("1_4gfw7")]
+script = ExtResource("1_qjrql")

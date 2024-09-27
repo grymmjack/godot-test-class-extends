@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmuctnio6omn1"]
+
+[ext_resource type="Script" path="res://godot_console.gd" id="1_qjrql"]
+
+[node name="GodotConsole" type="Node"]
+script = ExtResource("1_qjrql")
