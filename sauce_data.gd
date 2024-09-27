@@ -21,4 +21,4 @@ extends GodotConsoleResource
 @export_storage var TInfoS:String
 
 func _init() -> void:
-	print("SauceData")
+	super._init()

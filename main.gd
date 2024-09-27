@@ -3,3 +3,4 @@ extends Node
 
 func _init() -> void:
 	print("SCENE: main.tscn")
+	print_tree_pretty()

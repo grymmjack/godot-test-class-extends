@@ -10,5 +10,4 @@ extends TextData
 enum ASPECT_RATIO { LEGACY, SQUARE }
 
 func _init() -> void:
-	print("AnsiData")
 	super._init()

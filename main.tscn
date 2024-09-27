@@ -1,9 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://j637ltdtjghn"]
 
-[ext_resource type="PackedScene" uid="uid://dmuctnio6omn1" path="res://godot_console.tscn" id="1_4gfw7"]
-[ext_resource type="Script" path="res://main.gd" id="1_qjrql"]
+[ext_resource type="Script" path="res://main.gd" id="1_04kcn"]
+[ext_resource type="PackedScene" uid="uid://dmuctnio6omn1" path="res://godot_console.tscn" id="1_casa8"]
 
 [node name="root" type="Node2D"]
+script = ExtResource("1_04kcn")
 
-[node name="GodotConsole1" parent="." instance=ExtResource("1_4gfw7")]
-script = ExtResource("1_qjrql")
+[node name="GodotConsole" parent="." instance=ExtResource("1_casa8")]
+
+[editable path="GodotConsole"]

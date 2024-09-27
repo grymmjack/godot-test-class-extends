@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://csguo07ieaso2"]
+
+[ext_resource type="Script" path="res://godot_console_screen.gd" id="1_gavjk"]
+
+[node name="GodotConsoleScreen" type="Node"]
+script = ExtResource("1_gavjk")
+
+[node name="BG_8x8" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="FG_8x8" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="BG_8x16" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="FG_8x16" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="BG_8x19" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="FG_8x19" type="TileMapLayer" parent="."]
+unique_name_in_owner = true

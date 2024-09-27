@@ -1,8 +1,12 @@
+@icon("res://icon.svg")
 class_name GodotConsole
 extends Node
 
-@export var ansi_display:AnsiDisplay
+@export var display:AnsiDisplay
 
 func _init() -> void:
 	print("SCENE: godot_console.tscn")
-	ansi_display = AnsiDisplay.new()
+	display = AnsiDisplay.new()
+	display.load_file("file.ans")
+	print(display.ansi.sauce.data.Author)
+	print_tree_pretty()

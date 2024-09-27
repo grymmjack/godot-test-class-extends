@@ -9,4 +9,4 @@ extends GodotConsoleResource
 enum FONT { FONT_8x8, FONT_8x16, FONT_9x16 }
 
 func _init() -> void:
-	print("TextData")
+	super._init()

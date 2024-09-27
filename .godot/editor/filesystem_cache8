@@ -1,0 +1,17 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1727445224
+ansi_data.gd::GDScript::-1::1727442637::0::1::::AnsiData<>TextData<>::
+ansi_display.gd::GDScript::-1::1727444028::0::1::::AnsiDisplay<>TextDisplay<>::
+ansi_parser.gd::GDScript::-1::1727442645::0::1::::AnsiParser<>GodotConsoleResource<>::
+godot_console.gd::GDScript::-1::1727445044::0::1::::GodotConsole<>Node<>res://icon.svg::
+godot_console.tscn::PackedScene::8042971789726687396::1727444840::0::1::::<><>::res://godot_console.gd<>uid://csguo07ieaso2::::res://godot_console_screen.tscn
+godot_console_resource.gd::GDScript::-1::1727443451::0::1::::GodotConsoleResource<>Resource<>::
+godot_console_screen.gd::GDScript::-1::1727444884::0::1::::GodotConsoleScreen<>Node<>::
+godot_console_screen.tscn::PackedScene::6049867523251486463::1727444840::0::1::::<><>::res://godot_console_screen.gd
+icon.svg::CompressedTexture2D::965992465993089762::1726715832::1727445028::1::::<><>::
+main.gd::GDScript::-1::1727440655::0::1::::<>Node<>::
+main.tscn::PackedScene::697453131590755243::1727445155::0::1::::<><>::res://godot_console.gd
+sauce_data.gd::GDScript::-1::1727442667::0::1::::SauceData<>GodotConsoleResource<>::
+sauce_parser.gd::GDScript::-1::1727442673::0::1::::SauceParser<>GodotConsoleResource<>::
+text_data.gd::GDScript::-1::1727442681::0::1::::TextData<>GodotConsoleResource<>::
+text_display.gd::GDScript::-1::1727442688::0::1::::TextDisplay<>GodotConsoleResource<>::

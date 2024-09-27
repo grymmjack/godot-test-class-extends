@@ -1,10 +1,10 @@
 class_name AnsiParser
 extends GodotConsoleResource
 
-@export_storage var ansi_data:AnsiData
-@export_storage var sauce_parser:SauceParser
+@export_storage var data:AnsiData
+@export_storage var sauce:SauceParser
 
 func _init() -> void:
-	print("AnsiParser")
-	ansi_data = AnsiData.new()
-	sauce_parser = SauceParser.new()
+	super._init()
+	data = AnsiData.new()
+	sauce = SauceParser.new()
