@@ -1,7 +1,3 @@
 res://main.tscn
-res://godot_console_screen.gd
-res://godot_console_resource.gd
-res://godot_console.gd
 res://godot_console_screen.tscn
-res://main.gd
 res://godot_console.tscn
