@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://godot_console.gd" id="1_qjrql"]
 [ext_resource type="PackedScene" uid="uid://csguo07ieaso2" path="res://godot_console_screen.tscn" id="2_m7syr"]
 
-[node name="GodotConsole" type="Node"]
+[node name="CONSOLE" type="Node"]
 script = ExtResource("1_qjrql")
 
-[node name="GodotConsoleScreen" parent="." instance=ExtResource("2_m7syr")]
+[node name="SCREEN" parent="." instance=ExtResource("2_m7syr")]
+unique_name_in_owner = true

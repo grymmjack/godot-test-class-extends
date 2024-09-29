@@ -1,11 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://j637ltdtjghn"]
+[gd_scene load_steps=7 format=3 uid="uid://j637ltdtjghn"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_04kcn"]
 [ext_resource type="PackedScene" uid="uid://dmuctnio6omn1" path="res://godot_console.tscn" id="1_casa8"]
+[ext_resource type="Script" path="res://ansi_data.gd" id="3_cqrtn"]
+[ext_resource type="Script" path="res://ansi_display.gd" id="4_wkyqq"]
 
-[node name="root" type="Node2D"]
+[sub_resource type="Resource" id="Resource_mf4w4"]
+script = ExtResource("3_cqrtn")
+ice_color = false
+font_8px = false
+font_9px = false
+font_used = ""
+aspect_ratio = 0
+raw_data = PackedByteArray()
+source_file = "/home/grymmjack/git/godot-test-class-extends/assets/ANSIs/gj-22_dec23.ans"
+columns = 0
+rows = 0
+font = 2
+
+[sub_resource type="Resource" id="Resource_wyvua"]
+script = ExtResource("4_wkyqq")
+data = SubResource("Resource_mf4w4")
+
+[node name="root" type="Node2D" node_paths=PackedStringArray("Console")]
 script = ExtResource("1_04kcn")
+Console = NodePath("CONSOLE")
 
-[node name="GodotConsole" parent="." instance=ExtResource("1_casa8")]
+[node name="CONSOLE" parent="." instance=ExtResource("1_casa8")]
+unique_name_in_owner = true
+display = SubResource("Resource_wyvua")
 
-[editable path="GodotConsole"]
+[editable path="CONSOLE"]
