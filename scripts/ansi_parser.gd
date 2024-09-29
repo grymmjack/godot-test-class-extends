@@ -3,10 +3,10 @@
 # @author Rick Christy <grymmjack@gmail.com>
 # @requires Godot 4.3+
 
-class_name AnsiParser
-extends TextConsole
+class_name AnsiParserV1
+extends TextConsoleV1
 
-var sauce_data:SauceParser.SauceData = null
+var sauce_data:SauceParserV1.SauceData = null
 var ansi_width:int = 0
 var ansi_height:int = 0
 

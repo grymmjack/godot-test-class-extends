@@ -5,7 +5,7 @@
 # @author Rick Christy <grymmjack@gmail.com>
 # @requires Godot 4.3+
 
-class_name SauceParser
+class_name SauceParserV1
 extends Resource
 
 const SAUCE_ID := "SAUCE"
@@ -29,7 +29,7 @@ const ANSI_FLAG_BIT_7         = 1 << 6
 const ANSI_FLAG_BIT_8         = 1 << 7
 
 # SAUCE data structure
-class SauceData:
+class SauceDataV1:
 	var ID: String = ""
 	var Version: String = ""
 	var Title: String = ""

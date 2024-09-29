@@ -3,6 +3,7 @@ class_name GodotConsoleResource
 extends Resource
 
 func _init() -> void:
+	#pass
 	print("- %-22s %s : %-20s -> %-25s" % [
 		get_script().get_path(),
 		get_script().get_instance_base_type(),

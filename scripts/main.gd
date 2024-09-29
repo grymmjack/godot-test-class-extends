@@ -6,8 +6,8 @@
 # @requires Godot 4.3+
 
 @icon("res://icon.svg")
-class_name TextScreen
-extends AnsiParser
+class_name TextScreenV1
+extends AnsiParserV1
 
 func _ready() -> void:
 	#create_colored_tiles(CGA_PALETTE, BASE_TILESET_8x8, "DOS 8x8", "CGA")

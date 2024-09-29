@@ -3,7 +3,7 @@
 # @author Rick Christy <grymmjack@gmail.com>
 # @requires Godot 4.3+
 
-class_name TextChar
+class_name TextCharV1
 extends Resource
 
 @export var screen_position:Vector2i = Vector2i.ZERO:

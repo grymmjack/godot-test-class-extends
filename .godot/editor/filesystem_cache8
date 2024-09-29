@@ -1,24 +1,23 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1727621423
-ansi_data.gd::GDScript::-1::1727442637::0::1::::AnsiData<>TextData<>::
-ansi_display.gd::GDScript::-1::1727444028::0::1::::AnsiDisplay<>TextDisplay<>::
-ansi_parser.gd::GDScript::-1::1727442645::0::1::::AnsiParser<>GodotConsoleResource<>::
-godot_console.gd::GDScript::-1::1727445590::0::1::::GodotConsole<>Node<>res://icon.svg::
-godot_console.tscn::PackedScene::8042971789726687396::1727446196::0::1::::<><>::res://godot_console.gd<>uid://csguo07ieaso2::::res://godot_console_screen.tscn
-godot_console_resource.gd::GDScript::-1::1727445281::0::1::::GodotConsoleResource<>Resource<>res://icon.svg::
-godot_console_screen.gd::GDScript::-1::1727445595::0::1::::GodotConsoleScreen<>Node<>res://icon.svg::
-godot_console_screen.tscn::PackedScene::6049867523251486463::1727446196::0::1::::<><>::res://godot_console_screen.gd
+::res://::1727626541
+ansi_display.gd::GDScript::-1::1727626414::0::1::::AnsiDisplay<>TextDisplay<>::
+ansi_parser.gd::GDScript::-1::1727626189::0::1::::AnsiParser<>GodotConsoleResource<>::
+godot_console.gd::GDScript::-1::1727626286::0::1::::GodotConsole<>Node<>res://icon.svg::
+godot_console.tscn::PackedScene::8042971789726687396::1727626482::0::1::::<><>::res://godot_console.gd<>uid://csguo07ieaso2::::res://godot_console_screen.tscn
+godot_console_resource.gd::GDScript::-1::1727626339::0::1::::GodotConsoleResource<>Resource<>res://icon.svg::
+godot_console_screen.gd::GDScript::-1::1727626296::0::1::::GodotConsoleScreen<>Node<>res://icon.svg::
+godot_console_screen.tscn::PackedScene::6049867523251486463::1727626482::0::1::::<><>::res://godot_console_screen.gd<>uid://dmj5j0fu2jpc6::::res://assets/tilemaps/CGAColors8x8.tres<>uid://cchah5npvlex5::::res://assets/tilemaps/DOSFont-CGA-DOS 8x8.tres<>uid://cpq7y1pe67e5i::::res://assets/tilemaps/CGAColors9x16.tres<>uid://bhwc1qv0wscae::::res://assets/tilemaps/DOSFont-CGA-DOS 9x16.tres<>uid://d4b687rujakbv::::res://assets/tilemaps/CGAColors8x16.tres<>uid://d3r2slyu178n4::::res://assets/tilemaps/DOSFont-CGA-DOS 8x16.tres
 icon.svg::CompressedTexture2D::965992465993089762::1726715832::1727445028::1::::<><>::
-main.gd::GDScript::-1::1727445684::0::1::::<>Node<>::
-main.tscn::PackedScene::697453131590755243::1727446196::0::1::::<><>::res://main.gd<>uid://dmuctnio6omn1::::res://godot_console.tscn
+main.gd::GDScript::-1::1727626524::0::1::::<>Node<>::
+main.tscn::PackedScene::697453131590755243::1727626524::0::1::::<><>::res://main.gd<>uid://dmuctnio6omn1::::res://godot_console.tscn<>res://sauce_data.gd<>res://sauce_parser.gd<>res://ansi_display.gd<>res://ansi_parser.gd<>res://text_data.gd
 README.md::TextFile::-1::1727136259::0::1::::<><>::
-sauce_data.gd::GDScript::-1::1727442667::0::1::::SauceData<>GodotConsoleResource<>::
-sauce_parser.gd::GDScript::-1::1727442673::0::1::::SauceParser<>GodotConsoleResource<>::
+sauce_data.gd::GDScript::-1::1727626319::0::1::::SauceData<>GodotConsoleResource<>::
+sauce_parser.gd::GDScript::-1::1727626326::0::1::::SauceParser<>GodotConsoleResource<>::
 splash-trans.png::CompressedTexture2D::8446545590579177032::1727066271::1727621432::1::::<><>::
 splash.png::CompressedTexture2D::4253892818851345954::1727066163::1727621432::1::::<><>::
 splash.svg::CompressedTexture2D::1115564053297941647::1727067988::1727621432::1::::<><>::
-text_data.gd::GDScript::-1::1727442681::0::1::::TextData<>GodotConsoleResource<>::
-text_display.gd::GDScript::-1::1727442688::0::1::::TextDisplay<>GodotConsoleResource<>::
+text_data.gd::GDScript::-1::1727626454::0::1::::TextData<>GodotConsoleResource<>::
+text_display.gd::GDScript::-1::1727626189::0::1::::TextDisplay<>GodotConsoleResource<>::
 ::res://assets/::1727322412
 ::res://assets/ANSIs/::1727323013
 acknowledgements.ans::TextFile::-1::1726972323::0::1::::<><>::
@@ -54,7 +53,7 @@ stormtrooper-pixel-art.png-25-OPT.ans::TextFile::-1::1726924610::0::1::::<><>::
 stormtrooper-pixel-art.png-25.ans::TextFile::-1::1726956768::0::1::::<><>::
 US-CANDLES.ANS::TextFile::-1::1727322913::0::1::::<><>::
 US-CAT.ans::TextFile::-1::1727080222::0::1::::<><>::
-::res://assets/images/::1727082523
+::res://assets/images/::1727621432
 CGA-8x8-9x9-SCALED-1x.png::CompressedTexture2D::4640240671607553161::1727075747::1727621432::1::::<><>::
 CGA-8x16-9x17-SCALED-1x.png::CompressedTexture2D::9072562582944321990::1727075757::1727621432::1::::<><>::
 CGA-9x16-9x17-SCALED-1x.png::CompressedTexture2D::1327008667915068848::1727075767::1727621432::1::::<><>::
@@ -67,20 +66,20 @@ DOS-9x16-9x17-SCALED-1x.png::CompressedTexture2D::3466797535496311937::172707495
 DOS-BLINKING-8x8-9x9-SCALED-1x.png::CompressedTexture2D::2803338655265890568::1727074912::1727621432::1::::<><>::
 DOS-BLINKING-8x16-9x17-SCALED-1x.png::CompressedTexture2D::2171949439078198654::1727074925::1727621432::1::::<><>::
 DOS-BLINKING-9x16-9x17-SCALED-1x.png::CompressedTexture2D::2410881094015981491::1727074931::1727621432::1::::<><>::
-::res://assets/tilemaps/::1727313605
-CGAColors8x8.tres::TileSet::8021946478203304151::1727313600::0::1::::<><>::uid://b7d1c6k0u0enx::::res://assets/images/CGA-8x8-9x9-SCALED-1x.png<>uid://did2ci4l2adlk::::res://assets/images/CGA-BLINKING-8x8-9x9-SCALED-1x.png
-CGAColors8x16.tres::TileSet::9198745760240550831::1727313600::0::1::::<><>::uid://d2i21r65h37o1::::res://assets/images/CGA-8x16-9x17-SCALED-1x.png<>uid://dqrlcvwhrxk4n::::res://assets/images/CGA-BLINKING-8x16-9x17-SCALED-1x.png
-CGAColors9x16.tres::TileSet::5860691257847490116::1727313604::0::1::::<><>::uid://s52vysvihcj5::::res://assets/images/CGA-9x16-9x17-SCALED-1x.png<>uid://dqrlcvwhrxk4n::::res://assets/images/CGA-BLINKING-8x16-9x17-SCALED-1x.png
-DOSFont-BASE-8x8.tres::TileSet::4916541634732402990::1727313603::0::1::::<><>::uid://eg87pnyfq7pa::::res://assets/images/DOS-8x8-9x9-SCALED-1x.png<>uid://bf67twi3hjoay::::res://assets/images/DOS-BLINKING-8x8-9x9-SCALED-1x.png
-DOSFont-BASE-8x16.tres::TileSet::7685195748631804622::1727313603::0::1::::<><>::uid://q40s4tflc6ye::::res://assets/images/DOS-8x16-9x17-SCALED-1x.png<>uid://57dxptideom5::::res://assets/images/DOS-BLINKING-8x16-9x17-SCALED-1x.png
-DOSFont-BASE-9x16.tres::TileSet::6972311096988234835::1727313604::0::1::::<><>::uid://bpnlwcer85jnd::::res://assets/images/DOS-9x16-9x17-SCALED-1x.png<>uid://bal34hpigm0vf::::res://assets/images/DOS-BLINKING-9x16-9x17-SCALED-1x.png
-DOSFont-CGA-DOS 8x8.tres::TileSet::4927683795991013508::1727313601::0::1::::<><>::
-DOSFont-CGA-DOS 8x16.tres::TileSet::9161316213635115899::1727313603::0::1::::<><>::
-DOSFont-CGA-DOS 9x16.tres::TileSet::2923327638356192860::1727313605::0::1::::<><>::
-::res://docs/::1727313546
+::res://assets/tilemaps/::1727621731
+CGAColors8x8.tres::TileSet::8021946478203304151::1727621726::0::1::::<><>::uid://b7d1c6k0u0enx::::res://assets/images/CGA-8x8-9x9-SCALED-1x.png<>uid://did2ci4l2adlk::::res://assets/images/CGA-BLINKING-8x8-9x9-SCALED-1x.png
+CGAColors8x16.tres::TileSet::9198745760240550831::1727621728::0::1::::<><>::uid://d2i21r65h37o1::::res://assets/images/CGA-8x16-9x17-SCALED-1x.png<>uid://dqrlcvwhrxk4n::::res://assets/images/CGA-BLINKING-8x16-9x17-SCALED-1x.png
+CGAColors9x16.tres::TileSet::5860691257847490116::1727621729::0::1::::<><>::uid://s52vysvihcj5::::res://assets/images/CGA-9x16-9x17-SCALED-1x.png<>uid://dqrlcvwhrxk4n::::res://assets/images/CGA-BLINKING-8x16-9x17-SCALED-1x.png
+DOSFont-BASE-8x8.tres::TileSet::4916541634732402990::1727621726::0::1::::<><>::uid://eg87pnyfq7pa::::res://assets/images/DOS-8x8-9x9-SCALED-1x.png<>uid://bf67twi3hjoay::::res://assets/images/DOS-BLINKING-8x8-9x9-SCALED-1x.png
+DOSFont-BASE-8x16.tres::TileSet::7685195748631804622::1727621726::0::1::::<><>::uid://q40s4tflc6ye::::res://assets/images/DOS-8x16-9x17-SCALED-1x.png<>uid://57dxptideom5::::res://assets/images/DOS-BLINKING-8x16-9x17-SCALED-1x.png
+DOSFont-BASE-9x16.tres::TileSet::6972311096988234835::1727621726::0::1::::<><>::uid://bpnlwcer85jnd::::res://assets/images/DOS-9x16-9x17-SCALED-1x.png<>uid://bal34hpigm0vf::::res://assets/images/DOS-BLINKING-9x16-9x17-SCALED-1x.png
+DOSFont-CGA-DOS 8x8.tres::TileSet::4927683795991013508::1727621728::0::1::::<><>::
+DOSFont-CGA-DOS 8x16.tres::TileSet::9161316213635115899::1727621729::0::1::::<><>::
+DOSFont-CGA-DOS 9x16.tres::TileSet::2923327638356192860::1727621731::0::1::::<><>::
+::res://docs/::1727621433
 godot-console.png::CompressedTexture2D::5352970485526335720::1727136259::1727621433::1::::<><>::
 ::res://exports/::1726619194
-::res://exports/web/::1727082523
+::res://exports/web/::1727621432
 export_presets.cfg::TextFile::-1::1726619166::0::1::::<><>::
 index.144x144.png::CompressedTexture2D::4803853185599531865::1726972697::1727621432::1::::<><>::
 index.180x180.png::CompressedTexture2D::824664403518577233::1726972697::1727621432::1::::<><>::
@@ -89,12 +88,12 @@ index.apple-touch-icon.png::CompressedTexture2D::2503403949705145615::1726972697
 index.icon.png::CompressedTexture2D::5924146401108389775::1726972697::1727621432::1::::<><>::
 index.manifest.json::JSON::-1::1726972697::0::1::::<><>::
 index.png::CompressedTexture2D::695598650037459841::1726972697::1727621432::1::::<><>::
-::res://scripts/::1727348155
-ansi_parser.gd::GDScript::-1::1727323063::0::1::::AnsiParser<>TextConsole<>::
-main.gd::GDScript::-1::1727348155::0::1::::TextScreen<>AnsiParser<>res://icon.svg::
-sauce_parser.gd::GDScript::-1::1727320233::0::1::::SauceParser<>Resource<>::
-text_char.gd::GDScript::-1::1727066832::0::1::::TextChar<>Resource<>::
-text_console.gd::GDScript::-1::1727321710::0::1::::TextConsole<>Node<>res://icon.svg::
+::res://scripts/::1727624447
+ansi_parser.gd::GDScript::-1::1727624409::0::1::::AnsiParserV1<>TextConsoleV1<>::
+main.gd::GDScript::-1::1727624396::0::1::::TextScreenV1<>AnsiParserV1<>res://icon.svg::
+sauce_parser.gd::GDScript::-1::1727624447::0::1::::SauceParserV1<>Resource<>::
+text_char.gd::GDScript::-1::1727624396::0::1::::TextCharV1<>Resource<>::
+text_console.gd::GDScript::-1::1727624429::0::1::::TextConsoleV1<>Node<>res://icon.svg::
 ::res://utils/::1727076212
 QB64PE-cga-blinking-to-bitmap-8x8.bas::TextFile::-1::1727075701::0::1::::<><>::
 QB64PE-cga-blinking-to-bitmap-8x16.bas::TextFile::-1::1727075718::0::1::::<><>::

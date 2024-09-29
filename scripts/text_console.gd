@@ -4,7 +4,7 @@
 # @requires Godot 4.3+
 
 @icon("res://icon.svg")
-class_name TextConsole
+class_name TextConsoleV1
 extends Node
 
 signal is_ready
@@ -50,7 +50,7 @@ enum SCREEN_MODE { FONT_8x8, FONT_8x16, FONT_9x16 }
 @export_storage var utf8_ans:bool = false
 @export_storage var font_used:String
 
-var _scrollback_buffer:Array[TextChar]
+var _scrollback_buffer:Array[TextCharV1]
 
 enum VERTICAL_DIRECTION { DOWN, UP }
 enum HORIZONTAL_DIRECTION { LEFT, RIGHT }

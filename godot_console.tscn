@@ -1,10 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://dmuctnio6omn1"]
 
-[ext_resource type="Script" path="res://godot_console.gd" id="1_qjrql"]
+[ext_resource type="Script" path="res://godot_console_screen.gd" id="1_hk0kg"]
 [ext_resource type="PackedScene" uid="uid://csguo07ieaso2" path="res://godot_console_screen.tscn" id="2_m7syr"]
 
 [node name="CONSOLE" type="Node"]
-script = ExtResource("1_qjrql")
+script = ExtResource("1_hk0kg")
 
 [node name="SCREEN" parent="." instance=ExtResource("2_m7syr")]
-unique_name_in_owner = true
