@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AnsiDisplay" load_steps=2 format=3 uid="uid://cdbuvaftxyuti"]
+
+[ext_resource type="Script" path="res://ansi_display.gd" id="1_rvjo3"]
+
+[resource]
+script = ExtResource("1_rvjo3")
+columns = 0
+rows = 0
+font = 0
+background_color = 0
+foreground_color = 7
+cursor_position = Vector2i(0, 0)
+cursor_visibile = true
+cursor_shape = 0

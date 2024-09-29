@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="SauceParser" load_steps=2 format=3 uid="uid://dwirgl1yorp04"]
+
+[ext_resource type="Script" path="res://sauce_parser.gd" id="1_orygh"]
+
+[resource]
+script = ExtResource("1_orygh")

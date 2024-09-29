@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="AnsiParser" load_steps=2 format=3 uid="uid://kwgk6xmuyqtr"]
+
+[ext_resource type="Script" path="res://ansi_parser.gd" id="1_csrql"]
+
+[resource]
+script = ExtResource("1_csrql")

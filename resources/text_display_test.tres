@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TextDisplay" load_steps=2 format=3 uid="uid://btfw5ibocg7q2"]
+
+[ext_resource type="Script" path="res://text_display.gd" id="1_4yj4v"]
+
+[resource]
+script = ExtResource("1_4yj4v")
+columns = 0
+rows = 0
+font = 0
+background_color = 0
+foreground_color = 7
+cursor_position = Vector2i(0, 0)
+cursor_visibile = true
+cursor_shape = 0

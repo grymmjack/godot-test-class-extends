@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="SauceData" load_steps=2 format=3 uid="uid://1w8as661q5qe"]
+
+[ext_resource type="Script" path="res://sauce_data.gd" id="1_hnwia"]
+
+[resource]
+script = ExtResource("1_hnwia")
+ice_color = false
+font_8px = false
+font_9px = false
+font_used = ""
+aspect_ratio = 0
+ID = ""
+Version = ""
+Title = ""
+Author = ""
+Group = ""
+Date = ""
+FileSize = 0
+DataType = ""
+FileType = ""
+TInfo1 = ""
+TInfo2 = ""
+TInfo3 = ""
+TInfo4 = ""
+Comments = ""
+TFlags = 0
+TInfoS = ""
+raw_data = PackedByteArray()

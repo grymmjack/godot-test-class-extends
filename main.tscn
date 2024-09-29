@@ -1,16 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://j637ltdtjghn"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_04kcn"]
-[ext_resource type="PackedScene" uid="uid://dmuctnio6omn1" path="res://godot_console.tscn" id="1_casa8"]
+[ext_resource type="Script" path="res://godot_console.gd" id="2_px6bk"]
 
-[node name="root" type="Node2D"]
+[node name="main" type="Node2D"]
 script = ExtResource("1_04kcn")
 
-[node name="CONSOLE1" parent="." instance=ExtResource("1_casa8")]
-
-[node name="CONSOLE2" parent="." instance=ExtResource("1_casa8")]
-
-[editable path="CONSOLE1"]
-[editable path="CONSOLE1/SCREEN"]
-[editable path="CONSOLE2"]
-[editable path="CONSOLE2/SCREEN"]
+[node name="ansi1" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_px6bk")

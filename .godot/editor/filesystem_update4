@@ -15,3 +15,8 @@ res://ansi_display.gd
 res://godot_console.gd
 res://godot_console_resource.gd
 res://godot_console_screen.gd
+res://ansi_parser.gd
+res://sauce_data.gd
+res://sauce_parser.gd
+res://text_data.gd
+res://text_display.gd
