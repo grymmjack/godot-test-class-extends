@@ -1,12 +1,6 @@
 class_name SauceData
 extends GodotConsoleResource
 
-var ice_color:bool
-var font_8px:bool
-var font_9px:bool
-var font_used:String
-var aspect_ratio:int
-
 var ID:String
 var Version:String
 var Title:String
@@ -23,10 +17,9 @@ var TInfo4:String
 var Comments:String
 var TFlags:int
 var TInfoS:String
+var CommentLines: Array = []
 
 var raw_data:PackedByteArray
-
-enum ASPECT_RATIO { LEGACY, SQUARE }
 
 func _init() -> void:
 	super._init()
