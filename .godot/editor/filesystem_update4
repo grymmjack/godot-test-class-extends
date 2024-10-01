@@ -14,3 +14,4 @@ res://sauce_parser.gd
 res://ansi_parser.gd
 res://godot_console_screen.gd
 res://text_display.gd
+res://main.gd

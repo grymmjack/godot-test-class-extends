@@ -20,28 +20,33 @@ enum SCREEN_MODE { FONT_8x8, FONT_8x16, FONT_9x16 }
 @export_enum("8x8", "8x16", "9x16") var screen_mode:int = SCREEN_MODE.FONT_8x16 : set = setup_screen_mode
 @export_range(1, 4) var scale:int = 1 : set = setup_screen_mode
 @export var blinking_enabled_at_start:bool = false
+@export var locked:bool = false
+@export var scrollback_size:int = 1000
+@export_enum("UNDERLINE", "SOLID", "BOX") var cursor_shape:int
+@export_group("TileMapLayers")
+@export var background:TileMapLayer
+@export var foreground:TileMapLayer
+
+@export var bold:bool = false
+@export var blinking:bool = false
+@export var inverted:bool = false
+@export var ice_color:bool = false
+@export var font_9px:bool = false
+@export var font_8px:bool = false
+@export var utf8_ans:bool = false
+@export var font_used:String
 
 var background_color:int = CGA.BLACK
 var foreground_color:int = CGA.WHITE
 
 var cursor_position:Vector2i = Vector2i.ZERO
 var cursor_visibile:bool = true
-var cursor_shape:int
 
 enum FONT { FONT_8x8, FONT_8x16, FONT_9x16 }
 enum CGA {
 	BLACK, RED, GREEN, BROWN, BLUE, MAGENTA, CYAN, WHITE,
 	GRAY, B_RED, B_GREEN, B_BROWN, B_BLUE, B_MAGENTA, B_CYAN, B_WHITE
 }
-
-@export_storage var bold:bool = false
-@export_storage var blinking:bool = false
-@export_storage var inverted:bool = false
-@export_storage var ice_color:bool = false
-@export_storage var font_9px:bool = false
-@export_storage var font_8px:bool = false
-@export_storage var utf8_ans:bool = false
-@export_storage var font_used:String
 
 var _scrollback_buffer:Array[TextCharV1]
 
