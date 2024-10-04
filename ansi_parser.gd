@@ -49,11 +49,11 @@ func parse(data:PackedByteArray, screen:GodotConsoleScreen) -> void:
 			elif char_code == 13:  # CR (Carriage Return)
 				screen._set_cursor_position(Vector2i(0, screen.cursor_position.y))
 			else:
-				# Draw character
+				 #Draw character
 				#if !utf8_ans:
-					#screen.echo(screen.ASCII_UNICODE[char_code])
+				screen.echo(screen.ASCII_UNICODE[char_code])
 				#else:
-				screen.echo(String.chr(screen.ASCII_UNICODE.find(char_code)))
+				#screen.echo(String.chr(screen.ASCII_UNICODE.find(char_code)))
 
 func process_ansi_sequence(seq:String, screen:GodotConsoleScreen) -> void:
 	if seq == '':
@@ -260,7 +260,7 @@ func swap_colors(screen:GodotConsoleScreen) -> void:
 func load_ansi_file(file_path:String, screen:GodotConsoleScreen, resize_display:bool = true, change_font:bool = true) -> void:
 	var sauce_parser = SauceParser.new()
 	var content_length:int = 0
-	sauce_parser.data = sauce_parser.parse(file_path)
+	sauce_parser.parse(file_path)
 
 	var file = FileAccess.open(file_path, FileAccess.READ)
 	if file:
@@ -268,7 +268,7 @@ func load_ansi_file(file_path:String, screen:GodotConsoleScreen, resize_display:
 			# Exclude SAUCE record and comments from content
 			content_length = sauce_parser.data.FileSize
 			# Setup ANSI Flags https://www.acid.org/info/sauce/sauce.htm#ANSiFlags
-			if sauce_parser.data.Flags & sauce_parser.ANSI_FLAG_ICE_COLOR:
+			if sauce_parser.data.TFlags & sauce_parser.ANSI_FLAG_ICE_COLOR:
 				screen.ice_color = true
 				screen.blinking = false
 				screen.blinking_enabled_at_start = false
@@ -276,9 +276,9 @@ func load_ansi_file(file_path:String, screen:GodotConsoleScreen, resize_display:
 				screen.ice_color = false
 				screen.blinking = true
 				screen.blinking_enabled_at_start = true
-			font_8px = sauce_parser.data.Flags & sauce_parser.ANSI_FLAG_FONT_8PX and not sauce_parser.data.Flags & sauce_parser.ANSI_FLAG_FONT_9PX
-			font_9px = sauce_parser.data.Flags & sauce_parser.ANSI_FLAG_FONT_9PX and not sauce_parser.data.Flags & sauce_parser.ANSI_FLAG_FONT_8PX
-			if sauce_parser.data.Flags & sauce_parser.ANSI_FLAG_RATIO_BIT2 and not sauce_parser.ANSI_FLAG_RATIO_BIT1:
+			font_8px = sauce_parser.data.TFlags & sauce_parser.ANSI_FLAG_FONT_8PX and not sauce_parser.data.TFlags & sauce_parser.ANSI_FLAG_FONT_9PX
+			font_9px = sauce_parser.data.TFlags & sauce_parser.ANSI_FLAG_FONT_9PX and not sauce_parser.data.TFlags & sauce_parser.ANSI_FLAG_FONT_8PX
+			if sauce_parser.data.TFlags & sauce_parser.ANSI_FLAG_RATIO_BIT2 and not sauce_parser.ANSI_FLAG_RATIO_BIT1:
 				aspect_ratio = ASPECT_RATIO.LEGACY
 			else:
 				aspect_ratio = ASPECT_RATIO.SQUARE
@@ -309,7 +309,7 @@ func load_ansi_file(file_path:String, screen:GodotConsoleScreen, resize_display:
 				if screen.rows < 25: screen.rows = 25
 			if screen.font_used == "IBM VGA50": # reset to 50 rows if 8x8 font
 				if screen.ows < 50: screen.rows = 50
-			if screen.ansi_width > 0 and screen.ansi_height > 0: # then if ansi w/h from sauce avail. use instead
+			if ansi_width > 0 and ansi_height > 0: # then if ansi w/h from sauce avail. use instead
 				screen.columns = ansi_width
 				screen.rows = ansi_height
 		if change_font:

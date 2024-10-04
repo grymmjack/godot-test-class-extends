@@ -1,17 +1,17 @@
 res://main.tscn
+res://assets/tilemaps/DOSFont-BASE-8x8.tres
+res://assets/tilemaps/DOSFont-BASE-8x16.tres
+res://assets/tilemaps/DOSFont-BASE-9x16.tres
 res://assets/tilemaps/CGAColors8x8.tres
 res://assets/tilemaps/DOSFont-CGA-DOS 8x8.tres
 res://assets/tilemaps/CGAColors9x16.tres
 res://assets/tilemaps/DOSFont-CGA-DOS 9x16.tres
 res://assets/tilemaps/CGAColors8x16.tres
 res://assets/tilemaps/DOSFont-CGA-DOS 8x16.tres
-res://assets/tilemaps/DOSFont-BASE-8x8.tres
-res://assets/tilemaps/DOSFont-BASE-8x16.tres
-res://assets/tilemaps/DOSFont-BASE-9x16.tres
+res://ansi_display.gd
 res://godot_console.gd
-res://sauce_data.gd
-res://sauce_parser.gd
-res://ansi_parser.gd
-res://godot_console_screen.gd
-res://text_display.gd
 res://main.gd
+res://godot_console_screen.tscn
+res://sauce_parser.gd
+res://sauce_data.gd
+res://ansi_parser.gd

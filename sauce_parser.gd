@@ -28,7 +28,6 @@ func _init() -> void:
 	data = SauceData.new()
 
 func parse(file_path: String):
-	var data = SauceData.new()
 	var file = FileAccess.open(file_path, FileAccess.READ)
 
 	if !file:
@@ -59,14 +58,14 @@ func parse(file_path: String):
 	data.Group = bytes_to_str8(data.raw_data.slice(62, 62 + 20))
 	data.Date = bytes_to_str8(data.raw_data.slice(82, 82 + 8))
 	data.FileSize = bytes_to_int(data.raw_data.slice(90, 90 + 4))
-	data.DataType = data.raw_data.data[94]
-	data.FileType = data.raw_data.data[95]
+	data.DataType = data.raw_data[94]
+	data.FileType = data.raw_data[95]
 	data.TInfo1 = bytes_to_int(data.raw_data.slice(96, 96 + 2))  # 2 bytes for TInfo1
 	data.TInfo2 = bytes_to_int(data.raw_data.slice(98, 98 + 2))  # 2 bytes for TInfo2
 	data.TInfo3 = bytes_to_int(data.raw_data.slice(100, 102 + 2))  # 2 bytes for TInfo3
 	data.TInfo4 = bytes_to_int(data.raw_data.slice(102, 102 + 2))  # 2 bytes for TInfo4
 	data.Comments = data.raw_data[104]
-	data.Flags = data.raw_data[105]
+	data.TFlags = data.raw_data[105]
 	data.TInfoS = bytes_to_str8(data.raw_data.slice(106, 106 + 22))
 
 	# Parse comments if any
