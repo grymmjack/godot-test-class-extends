@@ -15,3 +15,5 @@ res://godot_console_screen.tscn
 res://sauce_parser.gd
 res://sauce_data.gd
 res://ansi_parser.gd
+res://godot_console_screen.gd
+res://godot_console_resource.gd

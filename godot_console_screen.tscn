@@ -8,7 +8,7 @@
 [ext_resource type="TileSet" uid="uid://d4b687rujakbv" path="res://assets/tilemaps/CGAColors8x16.tres" id="6_2v3wm"]
 [ext_resource type="TileSet" uid="uid://d3r2slyu178n4" path="res://assets/tilemaps/DOSFont-CGA-DOS 8x16.tres" id="7_vjj4v"]
 
-[node name="SCREEN" type="Node"]
+[node name="SCREEN" type="Node2D"]
 script = ExtResource("1_gavjk")
 
 [node name="BG_8x8" type="TileMapLayer" parent="."]

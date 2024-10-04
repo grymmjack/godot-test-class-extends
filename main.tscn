@@ -6,6 +6,34 @@
 [node name="main" type="Node2D"]
 script = ExtResource("1_04kcn")
 
-[node name="ansi1" type="Node" parent="."]
+[node name="ansi1" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_px6bk")
+
+[node name="ansi2" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_px6bk")
+
+[node name="ansi3" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_px6bk")
+
+[node name="ansi4" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_px6bk")
+
+[node name="ansi5" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_px6bk")
+
+[node name="ansi6" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_px6bk")
+
+[node name="ansi7" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_px6bk")
+
+[node name="ansi8" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_px6bk")

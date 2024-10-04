@@ -8,6 +8,6 @@ func _init() -> void:
 	ansi = AnsiParser.new()
 
 func load_file(filename:String, screen:GodotConsoleScreen) -> bool:
-	print("Loading file: '%s'" % filename)
+	#print("Loading file: '%s'" % filename)
 	ansi.load_ansi_file(filename, screen)
 	return true

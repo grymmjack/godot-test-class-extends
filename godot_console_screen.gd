@@ -1,6 +1,6 @@
 @icon("res://icon.svg")
 class_name GodotConsoleScreen
-extends Node
+extends Node2D
 
 signal is_scrolling
 signal is_printing
@@ -17,8 +17,8 @@ var columns:int
 var rows:int
 var font:int
 enum SCREEN_MODE { FONT_8x8, FONT_8x16, FONT_9x16 }
-@export_enum("8x8", "8x16", "9x16") var screen_mode:int = SCREEN_MODE.FONT_8x16 : set = setup_screen_mode
-@export_range(1, 4) var scale:int = 1 : set = setup_screen_mode
+@export_enum("8x8", "8x16", "9x16") var mode:int = SCREEN_MODE.FONT_8x16 : set = setup_screen_mode
+@export_range(1, 4) var screen_scale:int = 1 : set = setup_screen_mode
 @export var blinking_enabled_at_start:bool = false
 @export var locked:bool = false
 @export var scrollback_size:int = 1000
@@ -98,13 +98,15 @@ const CGA_PALETTE := [
 ]
 
 func _init() -> void:
-	print("SCENE: godot_console_screen.tscn")
+	pass
+	#print("SCENE: godot_console_screen.tscn")
 
 func _ready() -> void:
-	print("SCREEN READY")
+	pass
+	#print("SCREEN READY")
 
-func setup_screen_mode(mode:int) -> void:
-	screen_mode = mode
+func setup_screen_mode(new_mode:int) -> void:
+	mode = new_mode
 	if !is_inside_tree():
 		return
 	%BG_8x8.hide()

@@ -27,6 +27,9 @@ func _init() -> void:
 	super._init()
 	data = SauceData.new()
 
+func has_sauce() -> bool:
+	return data.ID == SAUCE_ID
+
 func parse(file_path: String):
 	var file = FileAccess.open(file_path, FileAccess.READ)
 

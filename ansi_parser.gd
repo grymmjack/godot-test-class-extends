@@ -176,29 +176,29 @@ func cursor_home(params:Array, screen:GodotConsoleScreen) -> void:
 
 func cursor_up(params:Array, screen:GodotConsoleScreen) -> void:
 	var count = int(params[0]) if (params.size() > 0) else 1
-	screen.move_cursor(Vector2i(0, -count))
+	move_cursor(Vector2i(0, -count), screen)
 
 func cursor_down(params:Array, screen:GodotConsoleScreen) -> void:
 	var count = int(params[0]) if (params.size() > 0) else 1
-	screen.move_cursor(Vector2i(0, count))
+	move_cursor(Vector2i(0, count), screen)
 
 func cursor_right(params:Array, screen:GodotConsoleScreen) -> void:
 	var count = int(params[0]) if (params.size() > 0) else 1
-	screen.move_cursor(Vector2i(count, 0))
+	move_cursor(Vector2i(count, 0), screen)
 
 func cursor_left(params:Array, screen:GodotConsoleScreen) -> void:
 	var count = int(params[0]) if (params.size() > 0) else 1
-	screen.move_cursor(Vector2i(-count, 0))
+	move_cursor(Vector2i(-count, 0), screen)
 
 @warning_ignore("unused_parameter")
 func cursor_col0_down(params:Array, screen:GodotConsoleScreen) -> void:
 	screen.cursor_position.x = 0
-	screen.move_cursor(Vector2i(0, 1))
+	move_cursor(Vector2i(0, 1), screen)
 
 @warning_ignore("unused_parameter")
 func cursor_col0_up(params:Array, screen:GodotConsoleScreen) -> void:
 	screen.cursor_position.x = 0
-	screen.move_cursor(Vector2i(0, -1))
+	move_cursor(Vector2i(0, -1), screen)
 
 func cursor_move_col(params:Array, screen:GodotConsoleScreen) -> void:
 	if params.size() > 0:
@@ -264,7 +264,9 @@ func load_ansi_file(file_path:String, screen:GodotConsoleScreen, resize_display:
 
 	var file = FileAccess.open(file_path, FileAccess.READ)
 	if file:
-		if sauce_parser.data:
+		if file_path.contains("BOG"):
+			breakpoint
+		if sauce_parser.has_sauce():
 			# Exclude SAUCE record and comments from content
 			content_length = sauce_parser.data.FileSize
 			# Setup ANSI Flags https://www.acid.org/info/sauce/sauce.htm#ANSiFlags
@@ -323,4 +325,4 @@ func load_ansi_file(file_path:String, screen:GodotConsoleScreen, resize_display:
 		screen.cls()
 		parse(content, screen)
 	else:
-		print("Failed to open file: %s" % file_path)
+		printerr("Failed to open file: %s" % file_path)
