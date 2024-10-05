@@ -4,9 +4,15 @@ class_name GodotConsole
 extends Sprite2D
 
 signal is_ready
+signal changed_file
+signal tool_paused
+signal tool_unpaused
 
 var display:AnsiDisplay = AnsiDisplay.new()
-@export_file() var loaded_file:String : set = load_file
+@export_file() var loaded_file:String : set = file_was_changed
+var screen_exists:bool = false
+var file_loaded:bool = false
+var file_changed:bool = false
 var screen:GodotConsoleScreen
 var screen_scene:PackedScene = preload("res://godot_console_screen.tscn")
 var size:Vector2i = Vector2i.ZERO
@@ -21,33 +27,74 @@ func _init() -> void:
 func _ready() -> void:
 	#print("GODOT CONSOLE READY")
 	if loaded_file:
-		load_file(loaded_file)
+		load_file(loaded_file, true) # force loading regardless first time
 	is_ready.emit()
+	pause_tool()
+
+func pause_tool() -> void:
+	#print_debug("PAUSING TOOL")
+	if Engine.is_editor_hint():
+		set_process(false)
+		set_physics_process(false)
+		tool_paused.emit()
+
+func unpause_tool() -> void:
+	#print_debug("UNPAUSING TOOL")
+	if Engine.is_editor_hint():
+		set_process(true)
+		tool_unpaused.emit()
 
 func _process(float) -> void:
-	pass
+	if Engine.is_editor_hint():
+		if loaded_file and file_loaded == false:
+			#printerr("FROM PROCESS Loaded file is %s" % loaded_file)
+			#printerr("In Tool and File Loaded!")
+			load_file(loaded_file)
+		pause_tool()
 
-func load_file(filename:String) -> void:
+func file_was_changed(filename:String) -> void:
 	loaded_file = filename
+	file_changed = true
+	load_file(filename, true)
+
+func load_file(filename:String, forced:bool = false) -> void:
 	var ext:String = filename.get_extension().to_lower()
 	match ext:
 		"ans":
-			display_file(filename)
+			display_file(filename, forced)
 		# for other cases use ANSI for now (sorta dumb overkill I know. just future-ready)
 		_:
-			display_file(filename)
+			display_file(filename, forced)
 
-func display_file(filename:String) -> void:
+func display_file(filename:String, forced:bool = false) -> void:
+	if forced:
+		file_changed = true
+	if file_changed == false:
+		#printerr("DISPLAY FILE file_changed == false")
+		return
 	# TODO modify scale if aspect_ratio
-	if screen is GodotConsoleScreen:
-		remove_child(screen)
+	if screen_exists:
+		for child in self.get_children():
+			child.queue_free()
+		#printerr("HAS NODE! %s"  % filename.get_file().replace('.', '_'))
+	#printerr("DOES NOT HAVE NODE! %s"  % filename.get_file().replace('.', '_'))
 	screen = screen_scene.instantiate()
+	screen.name = filename.get_file()
 	add_child(screen)
-	if Engine.is_editor_hint():
-		screen.owner = get_tree().edited_scene_root
+	if Engine.is_editor_hint(): # if in tool mode
+		if screen.is_inside_tree(): # and screen is in the tree
+			if get_tree().edited_scene_root != null && get_tree().edited_scene_root in [self, owner]:
+				screen.owner = self #get_tree().edited_scene_root # set the owner for the tool mode
+	screen_exists = true
+	screen.cls()
 	display.load_file(filename, screen)
-	screen.transform.origin = Vector2.ZERO
 	size = get_active_tilemap_layer_rect_size()
+	changed_file.emit()
+	file_loaded = true
+	file_changed = false
+	if Engine.is_editor_hint(): # if in tool mode
+		unpause_tool() # unpause to get an update
+
 
 func locate(x:int, y:int):
 	position = Vector2(x * scale.x, y * scale.y)
@@ -64,8 +111,6 @@ func get_active_tilemap_layer_rect_size() -> Vector2:
 	var tilemap_layer:TileMapLayer = screen.get_node(tilemap_name) # Adjust node path as necessary
 	# Get the tile size
 	var tile_size = tilemap_layer.tile_set.tile_size
-	if scale.x != 1:
-		breakpoint
 	tile_size.x *= scale.x
 	tile_size.y *= scale.y
 	# Get the size of the used area (number of cells)

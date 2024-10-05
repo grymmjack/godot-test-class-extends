@@ -1,8 +1,8 @@
 GodotConsole
+Node
 Sprite2D
 VBoxContainer
 ColorRect
 Node2D
 GodotConsoleScreen
-Node
 TileMapLayer
