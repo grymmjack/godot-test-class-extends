@@ -1,4 +1,5 @@
-extends Node
+@tool
+extends Sprite2D
 
 func _init() -> void:
 	pass
@@ -33,9 +34,9 @@ func _ready() -> void:
 	%ansi6.scale = Vector2(0.5, 0.5)
 	%ansi6.locate(0, %ansi5.position.y + %ansi5.size.y)
 
-	%ansi7.load_file("res://assets/ANSIs/bacsi-img2pal.png-25-OPT.ans")
-	#%ansi7.scale = Vector2(0.5, 0.5)
-	%ansi7.locate(1200, 0)
+	#%ansi7.load_file("res://assets/ANSIs/bacsi-img2pal.png-25-OPT.ans")
+	##%ansi7.scale = Vector2(0.5, 0.5)
+	#%ansi7.locate(1200, 0)
 
 	# TODO fix scale offset from center to top left corner
 	%ansi8.load_file("res://assets/ANSIs/gj-antonio.ans")

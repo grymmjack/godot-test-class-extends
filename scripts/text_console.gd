@@ -1,3 +1,4 @@
+@tool
 # GODOT-CONSOLE
 # Text Console for Godot 4 - Main
 # @author Rick Christy <grymmjack@gmail.com>

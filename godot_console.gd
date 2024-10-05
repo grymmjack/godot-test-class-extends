@@ -1,10 +1,12 @@
+@tool
 @icon("res://icon.svg")
 class_name GodotConsole
-extends Node2D
+extends Sprite2D
 
 signal is_ready
 
 var display:AnsiDisplay = AnsiDisplay.new()
+@export_file() var loaded_file:String : set = load_file
 var screen:GodotConsoleScreen
 var screen_scene:PackedScene = preload("res://godot_console_screen.tscn")
 var size:Vector2i = Vector2i.ZERO
@@ -18,9 +20,15 @@ func _init() -> void:
 
 func _ready() -> void:
 	#print("GODOT CONSOLE READY")
+	if loaded_file:
+		load_file(loaded_file)
 	is_ready.emit()
 
+func _process(float) -> void:
+	pass
+
 func load_file(filename:String) -> void:
+	loaded_file = filename
 	var ext:String = filename.get_extension().to_lower()
 	match ext:
 		"ans":
@@ -31,8 +39,12 @@ func load_file(filename:String) -> void:
 
 func display_file(filename:String) -> void:
 	# TODO modify scale if aspect_ratio
+	if screen is GodotConsoleScreen:
+		remove_child(screen)
 	screen = screen_scene.instantiate()
 	add_child(screen)
+	if Engine.is_editor_hint():
+		screen.owner = get_tree().edited_scene_root
 	display.load_file(filename, screen)
 	screen.transform.origin = Vector2.ZERO
 	size = get_active_tilemap_layer_rect_size()

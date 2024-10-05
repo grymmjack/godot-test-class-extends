@@ -1,6 +1,7 @@
+@tool
 @icon("res://icon.svg")
 class_name GodotConsoleScreen
-extends Node2D
+extends Sprite2D
 
 signal is_scrolling
 signal is_printing

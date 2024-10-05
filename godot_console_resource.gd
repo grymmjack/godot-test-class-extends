@@ -1,3 +1,4 @@
+@tool
 @icon("res://icon.svg")
 class_name GodotConsoleResource
 extends Resource

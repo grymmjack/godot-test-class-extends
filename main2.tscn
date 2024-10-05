@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://3pe4tefwq0oq"]
+
+[ext_resource type="Script" path="res://godot_console.gd" id="2_iddhl"]
+[ext_resource type="PackedScene" uid="uid://csguo07ieaso2" path="res://godot_console_screen.tscn" id="3_m0g7s"]
+[ext_resource type="Script" path="res://godot_console_screen.gd" id="4_gx4aq"]
+
+[node name="main" type="Sprite2D"]
+
+[node name="GodotConsole" type="Sprite2D" parent="."]
+script = ExtResource("2_iddhl")
+loaded_file = "res://assets/ANSIs/gj-fuel2-8x14.ans"
+metadata/_edit_group_ = true
+
+[node name="SCREEN" type="Sprite2D" parent="GodotConsole" instance=ExtResource("3_m0g7s")]
+script = ExtResource("4_gx4aq")
+mode = 2
+ice_color = true
