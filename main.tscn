@@ -1,99 +1,76 @@
-[gd_scene load_steps=5 format=3 uid="uid://j637ltdtjghn"]
+[gd_scene load_steps=2 format=3 uid="uid://3pe4tefwq0oq"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_04kcn"]
 [ext_resource type="Script" path="res://godot_console.gd" id="2_px6bk"]
-[ext_resource type="PackedScene" uid="uid://csguo07ieaso2" path="res://godot_console_screen.tscn" id="3_8k8e4"]
-[ext_resource type="Script" path="res://godot_console_screen.gd" id="4_0gpgp"]
 
 [node name="main" type="Sprite2D"]
-script = ExtResource("1_04kcn")
 
-[node name="ansi1" type="Sprite2D" parent="."]
-unique_name_in_owner = true
+[node name="GodotConsole" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-centered = false
 script = ExtResource("2_px6bk")
+loaded_file = "res://assets/ANSIs/gj-fuel2-8x14.ans"
 
-[node name="SCREEN" type="Sprite2D" parent="ansi1" instance=ExtResource("3_8k8e4")]
-script = ExtResource("4_0gpgp")
-mode = 2
-blinking_enabled_at_start = true
-bold = true
-
-[node name="ansi2" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(560, 0)
+[node name="GodotConsole2" type="Sprite2D" parent="."]
+position = Vector2(361, 0)
 scale = Vector2(0.5, 0.5)
-centered = false
 script = ExtResource("2_px6bk")
+loaded_file = "res://assets/ANSIs/anst-moebius.ans"
 
-[node name="SCREEN" type="Sprite2D" parent="ansi2" instance=ExtResource("3_8k8e4")]
-position = Vector2(286, 6)
-script = ExtResource("4_0gpgp")
-mode = 0
-blinking_enabled_at_start = true
-
-[node name="ansi3" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(0, 200)
-centered = false
-script = ExtResource("2_px6bk")
-
-[node name="SCREEN" type="Sprite2D" parent="ansi3" instance=ExtResource("3_8k8e4")]
-script = ExtResource("4_0gpgp")
-blinking_enabled_at_start = true
-
-[node name="ansi4" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(350, 600)
-centered = false
-script = ExtResource("2_px6bk")
-
-[node name="SCREEN" type="Sprite2D" parent="ansi4" instance=ExtResource("3_8k8e4")]
-script = ExtResource("4_0gpgp")
-mode = 2
-ice_color = true
-
-[node name="ansi5" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(0, 900)
-scale = Vector2(1.5, 1.5)
-centered = false
-script = ExtResource("2_px6bk")
-
-[node name="SCREEN" type="Sprite2D" parent="ansi5" instance=ExtResource("3_8k8e4")]
-position = Vector2(2, 230.667)
-script = ExtResource("4_0gpgp")
-mode = 2
-blinking_enabled_at_start = true
-
-[node name="ansi6" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(0, 762)
+[node name="GodotConsole3" type="Sprite2D" parent="."]
+position = Vector2(0, 383)
 scale = Vector2(0.5, 0.5)
-centered = false
 script = ExtResource("2_px6bk")
+loaded_file = "res://assets/ANSIs/bobafett.png-25-noice.ans"
 
-[node name="SCREEN" type="Sprite2D" parent="ansi6" instance=ExtResource("3_8k8e4")]
-script = ExtResource("4_0gpgp")
-ice_color = true
-
-[node name="ansi7" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(1200, 0)
-centered = false
+[node name="GodotConsole4" type="Sprite2D" parent="."]
+position = Vector2(683, 0)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("2_px6bk")
+loaded_file = "res://assets/ANSIs/gj-17_dec23.ans"
 
-[node name="SCREEN" type="Sprite2D" parent="ansi7" instance=ExtResource("3_8k8e4")]
-script = ExtResource("4_0gpgp")
-ice_color = true
-
-[node name="ansi8" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(1600, 1262)
-centered = false
+[node name="GodotConsole5" type="Sprite2D" parent="."]
+position = Vector2(683, 203)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("2_px6bk")
+loaded_file = "res://assets/ANSIs/gj-dwimmer.ans"
 
-[node name="SCREEN" type="Sprite2D" parent="ansi8" instance=ExtResource("3_8k8e4")]
-script = ExtResource("4_0gpgp")
-blinking_enabled_at_start = true
+[node name="GodotConsole6" type="Sprite2D" parent="."]
+position = Vector2(1052, 428)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_px6bk")
+loaded_file = "res://assets/ANSIs/stormtrooper-pixel-art.png-25-OPT.ans"
+
+[node name="GodotConsole7" type="Sprite2D" parent="."]
+position = Vector2(361, 340)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_px6bk")
+loaded_file = "res://assets/ANSIs/US-CAT.ans"
+
+[node name="GodotConsole8" type="Sprite2D" parent="."]
+position = Vector2(1421, 0)
+scale = Vector2(0.297, 0.297)
+script = ExtResource("2_px6bk")
+loaded_file = "res://assets/ANSIs/gj-swfalcon.ans"
+
+[node name="GodotConsole9" type="Sprite2D" parent="."]
+position = Vector2(683, 383)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_px6bk")
+loaded_file = "res://assets/ANSIs/gj-antonio.ans"
+
+[node name="GodotConsole11" type="Sprite2D" parent="."]
+position = Vector2(683, 573)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_px6bk")
+loaded_file = "res://assets/ANSIs/gj-jorge-test.ans"
+
+[node name="GodotConsole10" type="Sprite2D" parent="."]
+position = Vector2(831, 628)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("2_px6bk")
+loaded_file = "res://assets/ANSIs/gj-jorge-test.ans"
+
+[node name="GodotConsole12" type="Sprite2D" parent="."]
+position = Vector2(1042, 203)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_px6bk")
+loaded_file = "res://assets/ANSIs/gj-kraftwerk.ans"

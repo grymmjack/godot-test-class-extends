@@ -25,17 +25,18 @@ enum SCREEN_MODE { FONT_8x8, FONT_8x16, FONT_9x16 }
 @export var scrollback_size:int = 1000
 @export_enum("UNDERLINE", "SOLID", "BOX") var cursor_shape:int
 @export_group("TileMapLayers")
-@export var background:TileMapLayer
-@export var foreground:TileMapLayer
 
-@export var bold:bool = false
-@export var blinking:bool = false
-@export var inverted:bool = false
-@export var ice_color:bool = false
-@export var font_9px:bool = false
-@export var font_8px:bool = false
-@export var utf8_ans:bool = false
-@export var font_used:String
+var background:TileMapLayer
+var foreground:TileMapLayer
+
+var bold:bool = false
+var blinking:bool = false
+var inverted:bool = false
+var ice_color:bool = false
+var font_9px:bool = false
+var font_8px:bool = false
+var utf8_ans:bool = false
+var font_used:String
 
 var background_color:int = CGA.BLACK
 var foreground_color:int = CGA.WHITE

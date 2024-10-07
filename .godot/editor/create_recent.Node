@@ -1,4 +1,6 @@
 GodotConsole
+SubViewport
+SubViewportContainer
 Node
 Sprite2D
 VBoxContainer

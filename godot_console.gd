@@ -15,6 +15,7 @@ var file_loaded:bool = false
 var file_changed:bool = false
 var screen:GodotConsoleScreen
 var screen_scene:PackedScene = preload("res://godot_console_screen.tscn")
+var render_scene:PackedScene = preload("res://godot_console_screen_viewport.tscn")
 var size:Vector2i = Vector2i.ZERO
 
 # from https://github.com/SelinaDev/Godot-4-ASCII-Grid/blob/0ad3a145f3b296cd474e3619b43ca1128c6a309d/addons/ascii_grid/term_cell.gd#L7
@@ -33,6 +34,9 @@ func _ready() -> void:
 
 func pause_tool() -> void:
 	#print_debug("PAUSING TOOL")
+	var render_temp = get_node_or_null("/root/RENDER_TEMP")
+	if render_temp:
+		render_temp.queue_free()
 	if Engine.is_editor_hint():
 		set_process(false)
 		set_physics_process(false)
@@ -60,13 +64,15 @@ func file_was_changed(filename:String) -> void:
 func load_file(filename:String, forced:bool = false) -> void:
 	var ext:String = filename.get_extension().to_lower()
 	match ext:
+		"ans_":
+			display_file(filename, forced, true) # render
 		"ans":
 			display_file(filename, forced)
 		# for other cases use ANSI for now (sorta dumb overkill I know. just future-ready)
 		_:
 			display_file(filename, forced)
 
-func display_file(filename:String, forced:bool = false) -> void:
+func display_file(filename:String, forced:bool = false, render:bool = false) -> void:
 	if forced:
 		file_changed = true
 	if file_changed == false:
@@ -83,8 +89,9 @@ func display_file(filename:String, forced:bool = false) -> void:
 	add_child(screen)
 	if Engine.is_editor_hint(): # if in tool mode
 		if screen.is_inside_tree(): # and screen is in the tree
-			if get_tree().edited_scene_root != null && get_tree().edited_scene_root in [self, owner]:
-				screen.owner = self #get_tree().edited_scene_root # set the owner for the tool mode
+			if get_tree().edited_scene_root != null:
+				#screen.owner = self
+				screen.owner = get_tree().edited_scene_root # set the owner for the tool mode
 	screen_exists = true
 	screen.cls()
 	display.load_file(filename, screen)
@@ -94,7 +101,59 @@ func display_file(filename:String, forced:bool = false) -> void:
 	file_changed = false
 	if Engine.is_editor_hint(): # if in tool mode
 		unpause_tool() # unpause to get an update
+	if render:
+		var render_temp = render_scene.instantiate()
+		print(render_temp)
+		add_child(render_temp)
+		render_temp.name = "RENDER_TEMP"
+		if Engine.is_editor_hint(): # if in tool mode
+			if render_temp.is_inside_tree(): # and screen is in the tree
+				if get_tree().edited_scene_root != null:
+					render_temp.owner = get_tree().edited_scene_root
+		duplicate_nodes(screen, render_temp.get_node("DISPLAY"))
+		var viewport:SubViewport = render_temp.get_node("DISPLAY")
+		printt(viewport)
+		viewport.size = size
+		printt(viewport.size, size)
+		match screen.mode:
+			GodotConsoleScreen.SCREEN_MODE.FONT_8x8:
+				print("8x8")
+				var screen_render = render_temp.get_node("DISPLAY").get_children()[0]
+				var bg = screen_render.find_children("BG_8x8", "TileMapLayer", true)
+				var fg = screen_render.find_children("FG_8x8", "TileMapLayer", true)
+				bg[0].show()
+				fg[0].show()
+			GodotConsoleScreen.SCREEN_MODE.FONT_8x16:
+				print("8x16")
+				render_temp.print_tree_pretty()
+				printt(render_temp, self, get_parent())
+				var screen_render = render_temp.get_node("DISPLAY").get_children()[0]
+				var bg = screen_render.find_children("BG_8x16", "", true)
+				var fg = screen_render.find_children("FG_8x16", "", true)
+				bg[0].show()
+				fg[0].show()
+			GodotConsoleScreen.SCREEN_MODE.FONT_9x16:
+				print("9x16")
+				var screen_render = render_temp.get_node("DISPLAY").get_children()[0]
+				var bg = screen_render.find_children("BG_9x16", "TileMapLayer", true)
+				var fg = screen_render.find_children("FG_9x16", "TileMapLayer", true)
+				bg[0].show()
+				fg[0].show()
+		await RenderingServer.frame_post_draw
+		var image:Image = viewport.get_texture().get_image()
+		print(image)
+		print(image.save_png("res://assets/ANSIs/%s.png" % screen.name))
+		render_temp.queue_free()
 
+func duplicate_nodes(source_node, target_node) -> void:
+	printt(source_node, target_node)
+	# Duplicate the current node
+	var duplicated_node = source_node.duplicate()
+	# Add the duplicated node to the target node
+	target_node.add_child(duplicated_node)
+	# Iterate through all children of the source node
+	for child in source_node.get_children():
+		duplicate_nodes(child, duplicated_node)  # Recursive call for each child
 
 func locate(x:int, y:int):
 	position = Vector2(x * scale.x, y * scale.y)
