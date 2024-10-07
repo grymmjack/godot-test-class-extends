@@ -1,3 +1,5 @@
+# THIS IS A TEST REPO AND UNSTABLE AND CHAOTIC. BEWARE!
+
 ![GODOT-CONSOLE](https://raw.githubusercontent.com/grymmjack/godot-console/refs/heads/main/splash-trans.png)
 
 # Working CGA Godot Text Mode 16 color DOS console
