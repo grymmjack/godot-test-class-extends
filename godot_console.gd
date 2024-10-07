@@ -34,9 +34,6 @@ func _ready() -> void:
 
 func pause_tool() -> void:
 	#print_debug("PAUSING TOOL")
-	var render_temp = get_node_or_null("/root/RENDER_TEMP")
-	if render_temp:
-		render_temp.queue_free()
 	if Engine.is_editor_hint():
 		set_process(false)
 		set_physics_process(false)
