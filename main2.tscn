@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqxvl0srgquab"]
+[gd_scene load_steps=3 format=3 uid="uid://cqxvl0srgquab"]
 
 [ext_resource type="Script" path="res://godot_console.gd" id="1_nq274"]
-[ext_resource type="PackedScene" uid="uid://csguo07ieaso2" path="res://godot_console_screen.tscn" id="2_kto2f"]
-[ext_resource type="Script" path="res://godot_console_screen.gd" id="3_upflm"]
+[ext_resource type="PackedScene" uid="uid://csguo07ieaso2" path="res://godot_console_screen.tscn" id="2_40j6a"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,6 +9,5 @@
 script = ExtResource("1_nq274")
 loaded_file = "res://assets/ANSIs/acknowledgements.ans"
 
-[node name="acknowledgements_ans" type="Sprite2D" parent="GodotConsole" instance=ExtResource("2_kto2f")]
-script = ExtResource("3_upflm")
+[node name="acknowledgements_ans" parent="GodotConsole" instance=ExtResource("2_40j6a")]
 blinking_enabled_at_start = true

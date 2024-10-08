@@ -12,6 +12,7 @@ var display:AnsiDisplay = AnsiDisplay.new()
 @export_file() var loaded_file:String : set = file_was_changed
 var screen_exists:bool = false
 var file_loaded:bool = false
+var file_loading:bool = false
 var file_changed:bool = false
 var screen:GodotConsoleScreen
 var screen_scene:PackedScene = preload("res://godot_console_screen.tscn")
@@ -28,6 +29,7 @@ func _init() -> void:
 func _ready() -> void:
 	#print("GODOT CONSOLE READY")
 	if loaded_file:
+		#pass
 		load_file(loaded_file, true) # force loading regardless first time
 	is_ready.emit()
 	pause_tool()
@@ -59,15 +61,28 @@ func file_was_changed(filename:String) -> void:
 	load_file(filename, true)
 
 func load_file(filename:String, forced:bool = false) -> void:
+	if file_loading: # prevent multiple calls until we are ready!
+		printerr("Tried to load when already loading")
+		return
+	file_loading = true
 	var ext:String = filename.get_extension().to_lower()
 	match ext:
 		"ans_":
-			display_file(filename, forced, true) # render
+			call_deferred("display_file", filename, forced, true) # render
 		"ans":
-			display_file(filename, forced)
+			call_deferred("display_file", filename, forced)
 		# for other cases use ANSI for now (sorta dumb overkill I know. just future-ready)
 		_:
-			display_file(filename, forced)
+			call_deferred("display_file", filename, forced)
+
+
+func has_screen() -> bool:
+	for child in get_children():
+		if child is GodotConsoleScreen:
+			printerr("HAS SCREEN")
+			return true
+	printerr("HAS NO SCREEN")
+	return false
 
 func display_file(filename:String, forced:bool = false, render:bool = false) -> void:
 	if forced:
@@ -76,20 +91,18 @@ func display_file(filename:String, forced:bool = false, render:bool = false) -> 
 		#printerr("DISPLAY FILE file_changed == false")
 		return
 	# TODO modify scale if aspect_ratio
-	if screen_exists:
-		for child in self.get_children():
-			child.queue_free()
-		#printerr("HAS NODE! %s"  % filename.get_file().replace('.', '_'))
 	#printerr("DOES NOT HAVE NODE! %s"  % filename.get_file().replace('.', '_'))
-	screen = screen_scene.instantiate()
-	screen.name = filename.get_file()
-	add_child(screen)
-	if Engine.is_editor_hint(): # if in tool mode
-		if screen.is_inside_tree(): # and screen is in the tree
-			if get_tree().edited_scene_root != null:
-				#screen.owner = self
-				screen.owner = get_tree().edited_scene_root # set the owner for the tool mode
-	screen_exists = true
+	if !has_screen():
+		screen = screen_scene.instantiate()
+		screen.name = filename.get_file()
+		add_child(screen)
+		if Engine.is_editor_hint(): # if in tool mode
+			if screen.is_inside_tree(): # and screen is in the tree
+				if get_tree().edited_scene_root != null:
+					#screen.owner = self
+					screen.owner = get_tree().edited_scene_root # set the owner for the tool mode
+	else:
+		screen = get_children()[0]
 	screen.cls()
 	display.load_file(filename, screen)
 	size = get_active_tilemap_layer_rect_size()
@@ -141,6 +154,7 @@ func display_file(filename:String, forced:bool = false, render:bool = false) -> 
 		print(image)
 		print(image.save_png("res://assets/ANSIs/%s.png" % screen.name))
 		render_temp.queue_free()
+	file_loading = false
 
 func duplicate_nodes(source_node, target_node) -> void:
 	printt(source_node, target_node)
